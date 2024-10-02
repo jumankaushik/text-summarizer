@@ -3,8 +3,6 @@ const axios = require('axios');
 
 async function summarizeText(text) {
 
-  // INSERT CODE SNIPPET FROM POSTMAN BELOW
-
   let data = JSON.stringify({
     "inputs": text,
     "parameters": {
@@ -24,6 +22,9 @@ async function summarizeText(text) {
     data: data
   };
 
+  console.log("API request data:", data);
+  console.log("API request headers:", config.headers);
+
   try {
     const response = await axios.request(config);
     return response.data[0].summary_text;
@@ -31,11 +32,6 @@ async function summarizeText(text) {
   catch (error) {
     console.log(error);
   }
-
-
-
 }
-
-// Allows for summarizeText() to be called outside of this file
 
 module.exports = summarizeText;
