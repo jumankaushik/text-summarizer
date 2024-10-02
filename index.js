@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 5500;
-const summarizeText = require('./summarize.js');
+const summarizeText = require('./api/summarize.js');
 
 app.use(cors());
 app.use(express.json());
